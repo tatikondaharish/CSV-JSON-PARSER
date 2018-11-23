@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<web-app>
+	<servlet>
+		<servlet-name>JsonBuilder</servlet-name>
+		<servlet-class>serviceHandler.Application</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JsonBuilder</servlet-name>
+		<url-pattern>/buildjson</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DataFetcher</servlet-name>
+		<servlet-class></servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DataFetcher</servlet-name>
+		<url-pattern>/fetchdata</url-pattern>
+	</servlet-mapping>
+	
+	
+</web-app>

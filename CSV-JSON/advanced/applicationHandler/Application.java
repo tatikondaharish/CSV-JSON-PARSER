@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import service.DataServiceImpl;
 
-public class Application implements Servlet{
+public class Application implements Servlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -28,29 +28,28 @@ public class Application implements Servlet{
 
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		HttpServletRequest httpReq=(HttpServletRequest) req;
-		DataServiceImpl service=new DataServiceImpl();
-		
-		//Get headers from the Request
-		Enumeration<String> headerNames=httpReq.getHeaderNames();
-		
-		//Loop through the enumeration and get the HeaderName and HeaderBody 
-		while(headerNames.hasMoreElements()) {
-			String headerName=headerNames.nextElement();
-			service.getHeaders(headerName,httpReq.getHeader(headerName));
+		HttpServletRequest httpReq = (HttpServletRequest) req;
+		DataServiceImpl service = new DataServiceImpl();
+
+		// Get headers from the Request
+		Enumeration<String> headerNames = httpReq.getHeaderNames();
+
+		// Loop through the enumeration and get the HeaderName and HeaderBody
+		while (headerNames.hasMoreElements()) {
+			String headerName = headerNames.nextElement();
+			service.getHeaders(headerName, httpReq.getHeader(headerName));
 		}
-		
+
 		service.getBody(httpReq.getReader().readLine());
-		
+
 		service.buildJson();
-		
+
 		try {
-			
+
+		} catch (Exception e) {
+
 		}
-		catch(Exception e) {
-			
-		}
-		
+
 	}
 
 	@Override
@@ -62,7 +61,7 @@ public class Application implements Servlet{
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

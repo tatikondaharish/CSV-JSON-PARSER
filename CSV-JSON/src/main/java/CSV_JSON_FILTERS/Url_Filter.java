@@ -22,18 +22,20 @@ public class Url_Filter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		
-		HttpServletResponse httpres=(HttpServletResponse) response;
-		HttpServletRequest httpreq=(HttpServletRequest) request;
-		String uri=httpreq.getRequestURI();
-		//String[] parts = uri.split("/");
-		//String query ="-"+parts[2] +"-"+ parts[3];
-		//if ((CSV_JSON_DataStorage.getOrg_DeptMap().containsKey(query)||uri.contains("/buildjson"))) {
-			
-			chain.doFilter(request, response);
-	//	}
-	//	else
-		//	httpres.sendError(405, "sorry no match found in database");
+
+		HttpServletResponse httpres = (HttpServletResponse) response;
+		HttpServletRequest httpreq = (HttpServletRequest) request;
+		String uri = httpreq.getRequestURI();
+		// String[] parts = uri.split("/");
+		// String query ="-"+parts[2] +"-"+ parts[3];
+		// if
+		// ((CSV_JSON_DataStorage.getOrg_DeptMap().containsKey(query)||uri.contains("/buildjson")))
+		// {
+
+		chain.doFilter(request, response);
+		// }
+		// else
+		// httpres.sendError(405, "sorry no match found in database");
 	}
 
 }
